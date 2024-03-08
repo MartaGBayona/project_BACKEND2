@@ -2,12 +2,12 @@
 
 autenticacion:
 
-POST /api/auth/register
-POST /api/auth/login
+POST /api/auth/register (ok)
+POST /api/auth/login (ok)
 
 Usuarios:
 
-GET /api/users
+GET /api/users (ok)
 GET /api/users/profile
 PUT /api/users/profile
 GET /api/users?email=ejemplo@ejemplo.com
