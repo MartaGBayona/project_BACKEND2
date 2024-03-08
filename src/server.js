@@ -1,7 +1,7 @@
 import express from "express";
 import 'dotenv/config'
 import { dbConnection } from "./database/db.js";
-//import router from './routes/router.js'
+import router from './routes/router.js'
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.get('/api/healty', (req, res) => {
     )
 });
 
-//app.use('/api', router);
+app.use('/api', router);
 
 dbConnection()
 .then(() =>{
