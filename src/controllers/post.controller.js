@@ -7,17 +7,10 @@ export const createPost = async (req, res) => {
         const userId = req.tokenData.userId
         const { title, description } = req.body;
 
-        if (title.length > 25) {
+        if (title.length > 25 || description.length > 300) {
             return res.status(400).json({
                 success: false,
-                message: "The title cannot contain more than 25 characters.",
-            });
-        }
-
-        if (description.length > 300) {
-            return res.status(400).json({
-                success: false,
-                message: "The description cannot contain more than 300 characters.",
+                message: "Title or description is too long",
             });
         }
 
@@ -27,12 +20,12 @@ export const createPost = async (req, res) => {
                 title,
                 description,
             }
-        );
-
+        )
+        
         const user = await User
         .findById(userId)
         .select("name email -_id")
-        
+
         res.status(201).json(
             {
                 success: true,
