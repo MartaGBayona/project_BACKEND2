@@ -30,6 +30,7 @@ export const getUserProfile = async (req, res) => {
         },
         )
         .select("-password")
+
         res.status(201).json(
             {
                 success: true,
@@ -39,5 +40,33 @@ export const getUserProfile = async (req, res) => {
         );
     }catch (error) {
         handleError(res, "Cant get profile", 500)
+    }
+}
+
+export const updateUser = async (req,res) => {
+    try {
+        const userId = req.tokenData.userId
+        const name = req.body.name
+
+        const modifiedUser = await User
+        .findOneAndUpdate(
+        {
+            _id: userId
+        },
+        {
+            name: name
+        },
+        )
+        .select("-password")
+
+        res.status(201).json(
+            {
+                success: true,
+                message: "Profile update successfully",
+                data: modifiedUser
+            }
+        );
+    }catch (error) {
+        handleError(res, "Cant update profile", 500)
     }
 }

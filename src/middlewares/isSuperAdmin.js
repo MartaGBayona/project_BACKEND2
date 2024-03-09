@@ -7,7 +7,7 @@ export const isSuperAdmin = (req, res, next,) => {
             })
         }
 
-        next()
+        next();
     } catch (error){
         handleError(res, "You dont have permisions", 500)
     }

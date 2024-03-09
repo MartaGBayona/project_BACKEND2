@@ -10,7 +10,7 @@ POST /api/auth/login (ok)
 
 GET /api/users (ok)
 
-GET /api/users/profile
+GET /api/users/profile (ok)
 
 PUT /api/users/profile
 
