@@ -23,7 +23,19 @@ const UserSchema = new Schema(
             type: String,
             enum: ["user", "admin", "super_admin"],
             default: "user"
-        }
+        },
+        followers:[
+            {
+                type: Schema.Types.ObjectId,
+                ref: "User",
+            }
+        ],
+        following:[
+            {
+                type: Schema.Types.ObjectId,
+                ref: "User",
+            }
+        ],
     },
     {
         timestamps: true,

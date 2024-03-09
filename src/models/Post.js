@@ -22,6 +22,7 @@ const PostSchema = new Schema(
         like:[
             {
                 type: Schema.Types.ObjectId,
+                ref: "User",
                 required: false
             }
         ],
