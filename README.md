@@ -12,7 +12,7 @@ GET /api/users (ok)
 
 GET /api/users/profile (ok)
 
-PUT /api/users/profile
+PUT /api/users/profile (ok)
 
 GET /api/users?email=ejemplo@ejemplo.com
 

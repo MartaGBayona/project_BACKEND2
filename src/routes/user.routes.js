@@ -6,7 +6,7 @@ import { isSuperAdmin } from "../middlewares/isSuperAdmin.js";
 
 const router = Router();
 
-router.get('/',auth, getUsers)
+router.get('/',auth, isSuperAdmin, getUsers)
 router.get('/profile', auth, getUserProfile)
 router.put('/profile', auth, updateUser)
 

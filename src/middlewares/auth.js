@@ -12,12 +12,12 @@ export const auth = async (req, res, next) => {
             )
         };
 
-        const decoded = Jwt.verify(
+        const decoder = Jwt.verify(
             token,
             process.env.JWT_SECRET
         )
 
-        req.tokenData = decoded
+        req.tokenData = decoder
     next();
     }catch(error) {
         handleError(res, "token invalid", 500)

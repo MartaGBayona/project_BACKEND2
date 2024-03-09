@@ -1,6 +1,7 @@
 export const isSuperAdmin = (req, res, next,) => {
     try {
-        if(req.tokenData.name !== "super_admin") {
+        console.log(req.tokenData.roleName)
+        if(req.tokenData.roleName !== "super_admin") {
             return res.status(401).json({
                 success: false,
                 message: "UNATHORIZED"
