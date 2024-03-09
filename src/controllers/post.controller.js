@@ -21,10 +21,10 @@ export const createPost = async (req, res) => {
                 description,
             }
         )
-        
+
         const user = await User
-        .findById(userId)
-        .select("name email -_id")
+            .findById(userId)
+            .select("name email -_id")
 
         res.status(201).json(
             {
@@ -35,5 +35,19 @@ export const createPost = async (req, res) => {
         );
     } catch (error) {
         handleError(res, "Cant create post", 500)
+    }
+}
+
+export const deletePostById = async (req, res) => {
+    try{
+        res.status(201).json(
+            {
+                success: true,
+                message: "Post create successfully",
+                data: newPost, user
+            }
+        );
+    }catch (error) {
+        handleError(res, "Cant delete post", 500)
     }
 }
