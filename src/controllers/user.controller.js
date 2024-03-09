@@ -23,8 +23,13 @@ export const getUserProfile = async (req, res) => {
     try {
         const userId = req.tokenData.userId
 
-        const findUser = await User.findOne(userId)
-
+        const findUser = await User
+        .findOne(
+        {
+            _id: userId
+        },
+        )
+        .select("-password")
         res.status(201).json(
             {
                 success: true,
