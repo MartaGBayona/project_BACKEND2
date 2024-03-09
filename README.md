@@ -22,7 +22,7 @@ PUT /api/users/:id/role
 
 ### Citas:
 
-POST /api/posts
+POST /api/posts (ok)
 
 DELETE /api/posts/:id
 
