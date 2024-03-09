@@ -26,11 +26,10 @@ const PostSchema = new Schema(
                 required: false
             }
         ],
-        createdAt:
-        {
-            type: Date,
-            default: Date.now
-        }
+    },
+    {
+        timestamps: true,
+        versionKey: false
     }
 )
 

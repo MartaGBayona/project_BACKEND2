@@ -3,15 +3,14 @@ import { handleError } from "../utils/handleError.js";
 
 export const createPost = async (req, res) => {
     try {
-        const userId = req.tokenData.userId;
-        const title = req.body.title;
-        const description = req.body.description;
+        const userId = req.tokenData.userId
+        const { title, description } = req.body;
 
         const newPost = await Post.create(
             {
-                _id: userId,
-                title: title,
-                description: description,
+                userId,
+                title,
+                description,
             }
         );
         res.status(201).json(
