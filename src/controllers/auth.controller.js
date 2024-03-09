@@ -41,11 +41,12 @@ export const register = async (req, res) => {
 
         const passwordEncrypted = bcrypt.hashSync(password, 5);
 
-        const newUser = await User.create({
+        const newUser = await User.create(
+            {
             name: name,
             email: email,
             password: passwordEncrypted,
-        });
+            });
 
         res.status(201).json({
             success: true,
