@@ -103,11 +103,20 @@ export const updatePost = async (req, res) => {
 
 export const getOwnUser = async (req, res) => {
     try{
-
+        const userId = req.tokenData.userId
+        const findOwnPosts = await Post
+        .find(
+            {
+            user: userId
+            }
+        )
+        .populate('user','title description')
         res.status(201).json(
             {
                 success: true,
                 message: "Profile retrieved successfully",
+                data:findOwnPosts
+
             }
         );
     }catch (error){
