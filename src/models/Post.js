@@ -2,13 +2,12 @@ import { Schema, model } from "mongoose";
 
 const PostSchema = new Schema(
     {
-        user: [
+        user: 
         {
             type: Schema.Types.ObjectId,
             ref: "User",
             required: true
-        }
-    ],
+        },
         title:
         {
             type: String,

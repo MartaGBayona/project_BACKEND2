@@ -39,15 +39,69 @@ export const createPost = async (req, res) => {
 }
 
 export const deletePostById = async (req, res) => {
-    try{
+    try {
+        const postId = req.params.id
+        console.log("req.params:", req.params);
+        const deletePost = await Post
+            .deleteOne(
+                {
+                    _id: postId
+                }
+            )
+
         res.status(201).json(
             {
                 success: true,
-                message: "Post create successfully",
-                data: newPost, user
+                message: "Post delete successfully",
+                data: deletePost
+            }
+        );
+    } catch (error) {
+        handleError(res, "Cant delete post", 500)
+    }
+}
+
+export const updatePost = async (req, res) => {
+    try {
+        const postId = req.params.id
+        const { title, description } = req.body;
+        console.log("req.params:", req.params);
+
+
+        const existingPost = await Post.findById(postId);
+        if (!existingPost) {
+            return res.status(404).json({
+                success: false,
+                message: "Post not found"
+            });
+        }
+
+        const modifiedPost = await Post
+        .findByIdAndUpdate(
+                postId,
+            {
+                title: title,
+                description: description
+            },
+            {
+                new: true
+            }
+        );
+
+        res.status(201).json(
+            {
+                success: true,
+                message: "Post update successfully",
+                data: modifiedPost
             }
         );
     }catch (error) {
-        handleError(res, "Cant delete post", 500)
+        res.status(500).json(
+            {
+                success: false,
+                message: "Post cant update",
+                error: error.message
+            }
+        )
     }
 }

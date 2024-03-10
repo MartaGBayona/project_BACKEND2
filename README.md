@@ -24,9 +24,9 @@ PUT /api/users/:id/role
 
 POST /api/posts (ok)
 
-DELETE /api/posts/:id
+DELETE /api/posts/:id (ok)
 
-PUT /api/posts
+PUT /api/posts/:id
 
 GET /api/posts/own
 
