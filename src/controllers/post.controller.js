@@ -41,7 +41,7 @@ export const createPost = async (req, res) => {
 export const deletePostById = async (req, res) => {
     try {
         const postId = req.params.id
-        console.log("req.params:", req.params);
+        
         const deletePost = await Post
             .deleteOne(
                 {
@@ -65,10 +65,9 @@ export const updatePost = async (req, res) => {
     try {
         const postId = req.params.id
         const { title, description } = req.body;
-        console.log("req.params:", req.params);
-
 
         const existingPost = await Post.findById(postId);
+
         if (!existingPost) {
             return res.status(404).json({
                 success: false,
@@ -97,11 +96,27 @@ export const updatePost = async (req, res) => {
         );
     }catch (error) {
         res.status(500).json(
+            handleError(res, "Cant get profile", 500)
+        )
+    }
+}
+
+export const getOwnUser = async (req, res) => {
+    try{
+
+        res.status(201).json(
+            {
+                success: true,
+                message: "Profile retrieved successfully",
+            }
+        );
+    }catch (error){
+        res.status(500).json(
             {
                 success: false,
-                message: "Post cant update",
+                message: "Profile cant retrieved",
                 error: error.message
             }
-        )
+        );
     }
 }

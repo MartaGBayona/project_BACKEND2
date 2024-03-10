@@ -26,7 +26,7 @@ POST /api/posts (ok)
 
 DELETE /api/posts/:id (ok)
 
-PUT /api/posts/:id
+PUT /api/posts/:id  (ok)
 
 GET /api/posts/own
 
