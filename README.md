@@ -28,9 +28,9 @@ DELETE /api/posts/:id (ok)
 
 PUT /api/posts/:id  (ok)
 
-GET /api/posts/own
+GET /api/posts/own (ok)
 
-GET /api/posts
+GET /api/posts (ok)
 
 GET /api/posts/:id
 

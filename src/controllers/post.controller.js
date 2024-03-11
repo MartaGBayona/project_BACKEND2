@@ -101,7 +101,7 @@ export const updatePost = async (req, res) => {
     }
 }
 
-export const getOwnUser = async (req, res) => {
+export const getOwnPost = async (req, res) => {
     try{
         const userId = req.tokenData.userId
         const findOwnPosts = await Post
@@ -114,8 +114,28 @@ export const getOwnUser = async (req, res) => {
         res.status(201).json(
             {
                 success: true,
-                message: "Profile retrieved successfully",
+                message: "Posts retrieved successfully",
                 data:findOwnPosts
+
+            }
+        );
+    }catch (error){
+        res.status(500).json(
+            handleError(res, "Posts cant retrieved", 500)
+        );
+    }
+}
+
+export const getAllPosts = async (req, res) => {
+    try{
+        const findPosts = await Post
+        .find()
+        .populate('user', '-password')
+        res.status(201).json(
+            {
+                success: true,
+                message: "All posts retrieved successfully",
+                data:findPosts
 
             }
         );
@@ -123,7 +143,7 @@ export const getOwnUser = async (req, res) => {
         res.status(500).json(
             {
                 success: false,
-                message: "Profile cant retrieved",
+                message: "All posts cant retrieved",
                 error: error.message
             }
         );

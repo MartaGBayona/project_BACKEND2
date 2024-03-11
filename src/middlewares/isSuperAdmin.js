@@ -1,3 +1,5 @@
+import { handleError } from "../utils/handleError.js";
+
 export const isSuperAdmin = (req, res, next,) => {
     try {
         console.log(req.tokenData.roleName)
