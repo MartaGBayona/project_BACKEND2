@@ -39,3 +39,6 @@ GET /api/users/posts/users-id
 ### Likes:
 
 PUT /api/posts/like/:id
+
+
+_id: new mongoose.Types.ObjectId("") // es la forma más correcta de generar los id de los usuarios.
