@@ -211,21 +211,22 @@ export const getAllUsersPosts = async (req, res) => {
     try {
 
         const userId = req.params.userId
-        const findUserPosts = await Post.find(
-            {
-                _id: userId
-            }
-        )
-        .select("title description")
-        .populate('user')
+        const findUserPosts = await Post.find({user : userId })
+            .select("title description")
+            .populate('user');
+        
         if (!findUserPosts) {
-            res.status(400).json(
-                {
-                    success: true,
-                    message: "User not find",
-                }
-            );
+            return res.status(400).json({
+                success: false,
+                message: "No posts found for this user",
+            });
         }
+
+        res.status(200).json({
+            success: true,
+            message: "Posts retrieved successfully",
+            data: findUserPosts
+        });
 
         res.status(201).json(
             {
@@ -236,5 +237,39 @@ export const getAllUsersPosts = async (req, res) => {
         );
     } catch (error) {
         handleError(res, "Cant retrieved posts", 500)
+    }
+}
+
+export const pushLike = async (req, res) => {
+    try {
+        const postId = req.params.id
+        const userId = req.tokenData.userId
+        const post = await Post
+        .findOne(
+            {
+            _id: postId
+            }
+        )
+        if(!post) {
+            return res.status(400).json(
+                {
+                    success: true,
+                    message: "Cant find post",
+                }
+            );
+        }
+
+        post.like.push(userId)
+        post.like.pull(userId)
+        await post.save();
+
+        res.status(200).json({
+            success: true,
+            message: "Post like successfully",
+            data: post
+        });
+
+    } catch (error) {
+        handleError(res, "Cant put like", 500)
     }
 }
