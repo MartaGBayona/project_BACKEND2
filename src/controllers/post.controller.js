@@ -206,3 +206,35 @@ export const getPostById = async (req, res) => {
         )
     }
 }
+
+export const getAllUsersPosts = async (req, res) => {
+    try {
+
+        const userId = req.params.userId
+        const findUserPosts = await Post.find(
+            {
+                _id: userId
+            }
+        )
+        .select("title description")
+        .populate('user')
+        if (!findUserPosts) {
+            res.status(400).json(
+                {
+                    success: true,
+                    message: "User not find",
+                }
+            );
+        }
+
+        res.status(201).json(
+            {
+                success: true,
+                message: "Profile retrieved successfully",
+                data: findUserPosts
+            }
+        );
+    } catch (error) {
+        handleError(res, "Cant retrieved posts", 500)
+    }
+}

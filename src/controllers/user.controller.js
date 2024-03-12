@@ -4,8 +4,8 @@ import { handleError } from "../utils/handleError.js";
 export const getUsers = async (req, res) => {
     try {
         const findUsers = await User
-        .find()
-        .select("-password");
+            .find()
+            .select("-password");
 
         res.status(201).json(
             {
@@ -14,7 +14,7 @@ export const getUsers = async (req, res) => {
                 data: findUsers
             }
         );
-    }catch (error) {
+    } catch (error) {
         handleError(res, "Cant get users", 500)
     }
 }
@@ -24,12 +24,12 @@ export const getUserProfile = async (req, res) => {
         const userId = req.tokenData.userId
 
         const findUser = await User
-        .findOne(
-        {
-            _id: userId
-        },
-        )
-        .select("-password")
+            .findOne(
+                {
+                    _id: userId
+                },
+            )
+            .select("-password")
 
         res.status(201).json(
             {
@@ -38,26 +38,26 @@ export const getUserProfile = async (req, res) => {
                 data: findUser
             }
         );
-    }catch (error) {
+    } catch (error) {
         handleError(res, "Cant get profile", 500)
     }
 }
 
-export const updateUser = async (req,res) => {
+export const updateUser = async (req, res) => {
     try {
         const userId = req.tokenData.userId
         const name = req.body.name
 
         const modifiedUser = await User
-        .findOneAndUpdate(
-        {
-            _id: userId
-        },
-        {
-            name: name
-        },
-        )
-        .select("-password")
+            .findOneAndUpdate(
+                {
+                    _id: userId
+                },
+                {
+                    name: name
+                },
+            )
+            .select("-password")
 
         res.status(201).json(
             {
@@ -66,24 +66,7 @@ export const updateUser = async (req,res) => {
                 data: modifiedUser
             }
         );
-    }catch (error) {
-        handleError(res, "Cant update profile", 500)
-    }
-}
-
-export const getAllUsersPosts = async (req, res) => {
-    try {
-
-        const userId = req.params.userId
-
-                res.status(201).json(
-            {
-                success: true,
-                message: "Profile retrieved successfully",
-                data: findUser
-            }
-        );
     } catch (error) {
-        handleError(res, "Cant retrieved posts", 500)
+        handleError(res, "Cant update profile", 500)
     }
 }
