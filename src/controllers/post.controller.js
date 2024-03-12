@@ -41,6 +41,23 @@ export const createPost = async (req, res) => {
 export const deletePostById = async (req, res) => {
     try {
         const postId = req.params.id
+        const userId = req.tokenData.id
+
+        const findUser = User.find(
+            {
+                _id: postId,
+                user: userId
+            }
+        )
+
+        if(!findUser) {
+            res.status(400).json(
+                {
+                    success: true,
+                    message: "Post not find",
+                }
+            );
+        }
         
         const deletePost = await Post
             .deleteOne(
@@ -65,6 +82,23 @@ export const updatePost = async (req, res) => {
     try {
         const postId = req.params.id
         const { title, description } = req.body;
+        const userId = req.tokenData.id
+
+        const findUser = User.find(
+            {
+                _id: postId,
+                user: userId
+            }
+        );
+
+        if(!findUser) {
+            res.status(400).json(
+                {
+                    success: true,
+                    message: "Post not find",
+                }
+            );
+        };
 
         const existingPost = await Post.findById(postId);
 
