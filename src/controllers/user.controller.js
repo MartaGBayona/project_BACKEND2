@@ -70,3 +70,20 @@ export const updateUser = async (req,res) => {
         handleError(res, "Cant update profile", 500)
     }
 }
+
+export const getAllUsersPosts = async (req, res) => {
+    try {
+
+        const userId = req.params.userId
+
+                res.status(201).json(
+            {
+                success: true,
+                message: "Profile retrieved successfully",
+                data: findUser
+            }
+        );
+    } catch (error) {
+        handleError(res, "Cant retrieved posts", 500)
+    }
+}
