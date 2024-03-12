@@ -258,14 +258,17 @@ export const pushLike = async (req, res) => {
                 }
             );
         }
-
-        post.like.push(userId)
-        post.like.pull(userId)
+        const hasLike = post.like.includes(userId);
+        if(hasLike) {
+            post.like.pull(userId)
+        } else {
+            post.like.push(userId)
+        }
         await post.save();
 
         res.status(200).json({
             success: true,
-            message: "Post like successfully",
+            message:hasLike ? "Post unlike successfully" : "Post like successfully",
             data: post
         });
 
