@@ -7,7 +7,7 @@ const router = Router();
 
 router.post('/', auth, createPost)
 router.delete('/:id', auth, deletePostById)
-router.put('/:id', auth, isOwnProfile, updatePost)
+router.put('/:id', auth, updatePost)
 router.get('/own', auth, getOwnPost)
 router.get('/', auth, getAllPosts)
 
