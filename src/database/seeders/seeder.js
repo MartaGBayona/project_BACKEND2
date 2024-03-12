@@ -9,7 +9,7 @@ const seed = async () => {
     try {
         await dbConnection();
         console.log("database connected")
-        //await seedUsers()
+        await seedUsers()
         await seedPosts()
     } catch (error) {
         console.log("ffffff")
