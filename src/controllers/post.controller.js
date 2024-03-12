@@ -50,7 +50,7 @@ export const deletePostById = async (req, res) => {
             }
         )
 
-        if(!findUser) {
+        if (!findUser) {
             res.status(400).json(
                 {
                     success: true,
@@ -58,7 +58,7 @@ export const deletePostById = async (req, res) => {
                 }
             );
         }
-        
+
         const deletePost = await Post
             .deleteOne(
                 {
@@ -91,7 +91,7 @@ export const updatePost = async (req, res) => {
             }
         );
 
-        if(!findUser) {
+        if (!findUser) {
             res.status(400).json(
                 {
                     success: true,
@@ -110,16 +110,16 @@ export const updatePost = async (req, res) => {
         }
 
         const modifiedPost = await Post
-        .findByIdAndUpdate(
+            .findByIdAndUpdate(
                 postId,
-            {
-                title: title,
-                description: description
-            },
-            {
-                new: true
-            }
-        );
+                {
+                    title: title,
+                    description: description
+                },
+                {
+                    new: true
+                }
+            );
 
         res.status(201).json(
             {
@@ -128,7 +128,7 @@ export const updatePost = async (req, res) => {
                 data: modifiedPost
             }
         );
-    }catch (error) {
+    } catch (error) {
         res.status(500).json(
             handleError(res, "Cant get profile", 500)
         )
@@ -136,24 +136,24 @@ export const updatePost = async (req, res) => {
 }
 
 export const getOwnPost = async (req, res) => {
-    try{
+    try {
         const userId = req.tokenData.userId
         const findOwnPosts = await Post
-        .find(
-            {
-            user: userId
-            }
-        )
-        .populate('user','title description')
+            .find(
+                {
+                    user: userId
+                }
+            )
+            .populate('user', 'title description')
         res.status(201).json(
             {
                 success: true,
                 message: "Posts retrieved successfully",
-                data:findOwnPosts
+                data: findOwnPosts
 
             }
         );
-    }catch (error){
+    } catch (error) {
         res.status(500).json(
             handleError(res, "Posts cant retrieved", 500)
         );
@@ -161,25 +161,48 @@ export const getOwnPost = async (req, res) => {
 }
 
 export const getAllPosts = async (req, res) => {
-    try{
+    try {
         const findPosts = await Post
-        .find()
-        .populate('user', '-password')
+            .find()
+            .populate('user', '-password')
+            
         res.status(201).json(
             {
                 success: true,
                 message: "All posts retrieved successfully",
-                data:findPosts
+                data: findPosts
 
             }
         );
-    }catch (error){
+    } catch (error) {
         res.status(500).json(
+            handleError(res, "Posts cant retrieved", 500)
+        );
+    }
+};
+
+export const getPostById = async (req, res) => {
+    try {
+
+        const postId = req.params.id
+
+        const findPosts = await Post
+        .findOne(
             {
-                success: false,
-                message: "All posts cant retrieved",
-                error: error.message
+            _id: postId
+            }
+        )
+
+        res.status(201).json(
+            {
+                success: true,
+                message: "All posts retrieved successfully",
+                data: findPosts
             }
         );
+    } catch (error) {
+        res.status(500).json(
+            handleError(res, "Posts cant retrieved", 500)
+        )
     }
 }
