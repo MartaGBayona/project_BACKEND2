@@ -77,8 +77,7 @@ role: "user"
 `POST https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/auth/register`
 
 
-
-<image src="./img/exampleRegistred.png" alt="register">
+<image src="./img/Register.png" alt="register">
 
 - Log.
 
@@ -86,7 +85,7 @@ role: "user"
 
 
 
-<image src="./img/exampleLog.png" alt="log">
+<image src="./img/Log.png" alt="log">
 
 
 2. User:
@@ -97,22 +96,24 @@ role: "user"
 
 
 
-<image src="./img/viewAllUsers.png" alt="viewAllUsers">
+<image src="./img/GetUsers.png" alt="Get Users">
 
 - Get users profile:
 
 `GET https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/users/profile`
 
 
-<image src="./img/view user profile.png" alt="viewProfile">
+<image src="./img/GetUserProfile.png" alt="Get User Profile">
 
 - Put user profile:
+
+Can update user name.
 
 `PUT https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/users/profile`
 
 
 
-<image src="./img/modified user profile.png" alt="modified profile">
+<image src="./img/PutUserProfile.png" alt="Put User Profile">
 
 
 
@@ -123,51 +124,51 @@ role: "user"
 `POST https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/posts`
 
 
-<image src="./img/create appointment.png" alt="create appointment">
+<image src="./img/CreatePost.png" alt="create post">
 
 - Update post:
 
 `PUT https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/posts/:id`
 
 
-
-
-<image src="./img/update appointment.png" alt="update appointment">
+<image src="./img/PutPost.png" alt="put post">
 
 - Get own post:
 
 `GET https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/posts/own`
 
 
-<image src="./img/recover appointment.png" alt="recover appointment">
+<image src="./img/GetOwnPost.png" alt="get own post">
 
 - Get posts:
 
 `GET https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/posts`
 
+<image src="./img/GetPosts.png" alt="get posts">
+
 - Delete post:
 
 `DELETE https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/posts/:id`
 
-<image src="./img/recover a appointment.png" alt="recover a appointment">
+<image src="./img/DeletePost.png" alt="delete post">
 
 - Get post by id:
 
 `GET https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/posts/:id`
 
-<image src="./img/recover a appointment.png" alt="recover a appointment">
+<image src="./img/GetPostById.png" alt="get post by id">
 
 - Get user posts:
 
 `GET https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/users/posts/:user-id`
 
-<image src="./img/recover a appointment.png" alt="recover a appointment">
+<image src="./img/GetUserPosts.png" alt="get user posts">
 
 - Put like or pull like:
 
 `PUT https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/posts/like/:id`
 
-<image src="./img/recover a appointment.png" alt="recover a appointment">
+<image src="./img/Like.png" alt="Like">
 
 
 
