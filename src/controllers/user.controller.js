@@ -70,3 +70,41 @@ export const updateUser = async (req, res) => {
         handleError(res, "Cant update profile", 500)
     }
 }
+
+export const deleteUser = async (req, res) => {
+    try {
+        const userId = req.params.id
+
+        const findUser = User.findOne(
+            {
+                user: userId,
+            }
+        )
+
+        if (!findUser) {
+            res.status(400).json(
+                {
+                    success: true,
+                    message: "User not find",
+                }
+            );
+        }
+
+        const deleteUser = await User
+            .deleteOne(
+                {
+                    user: userId
+                }
+            )
+
+        res.status(201).json(
+            {
+                success: true,
+                message: "User delete successfully",
+                data: deleteUser
+            }
+        );
+    } catch (error) {
+        handleError(res, "Cant delete user", 500)
+    }
+}
