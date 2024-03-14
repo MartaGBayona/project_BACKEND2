@@ -187,23 +187,12 @@ Can update user name.
 
 - Generate endpoint, role change.
 
-- Limit appointment choices:
+- Generate controller to push or pull followers and followings
 
-  1. Prevent selection of expired days.
+- - Generate controller to view followers posts.
 
-  2. Limit hours selection to busines hours.
+- Require that users `name` do not contain numbers or special caracters.
 
-- Prevent users from viewing and modifying appointments and hours of other users.
-
-- Require that users `firstName` and `secondName` do not contain numbers or special caracters.
-
-- Generate a new table for employees:
-
-  1. Link the table with services and appointments.
-
-  2. Allow users to choose specializad employees for each services.
-
-- Deploying code.
 
 ---
 
@@ -217,6 +206,7 @@ https://github.com/MartaGBayona/project_BACKEND2.git
 
 - **Marta Gimeno Bayona**
 - [GitHub](https://github.com/MartaGBayona) - [LinkedIn](https://www.linkedin.com/in/martagbayona/)
+
 
 ## Acknowledgments  :sparkling_heart:
 
