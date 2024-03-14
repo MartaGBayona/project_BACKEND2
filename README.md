@@ -10,6 +10,7 @@
 4. [Future functionalities :star2:](#Future-functionalities-star2)
 5. [Link :dart:](#link-dart)
 6. [Author :wave:](#author-wave)
+7. [Acknowledgments :sparkling_heart:](#acknowledgments-sparkling_heart)
 
 ---
 
@@ -71,7 +72,7 @@ role: "user"
 
 1. Register and Log:
 
--Register Endpoint:
+- Register:
 
 `POST https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/auth/register`
 
@@ -79,11 +80,10 @@ role: "user"
 
 <image src="./img/exampleRegistred.png" alt="register">
 
-- Log Endpoint.
+- Log.
 
 `POST https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/auth/login`
 
-body:
 
 
 <image src="./img/exampleLog.png" alt="log">
@@ -170,62 +170,6 @@ body:
 <image src="./img/recover a appointment.png" alt="recover a appointment">
 
 
-4. Services:
-
-- View all services Enpoint:
-
-`GET localhost:4000/api/services`
-
-<image src="./img/view all services.png" alt="view services">
-
-- Create new service Endpoint:
-
-`POST localhost:4000/api/services`
-
-body:
-
-```
-{
-  "name": "hello, I'm new service",
-  "description": "I'm a new description"
-}
-```
-
-Bearer token:
-
-add token super_admin.
-
-<image src="./img/create new service.png" alt="create service">
-
-- Update service Enpoint:
-
-`PUT localhost:4000/api/services/:id`
-
-body:
-
-```
-{
-  "name": "update service successfully"
-}
-```
-
-Bearer token:
-
-add token super_admin.
-
-<image src="./img/update service.png" alt="update service">
-
-- Delete service Endpoint:
-
-`DELETE localhost:4000/api/services/:id`
-
-Bearer token:
-
-add token super_admin.
-
-<image src="./img/delete service.png" alt="delete service">
-
----
 
 ## Future functionalities :star2:
 
@@ -264,44 +208,6 @@ https://github.com/MartaGBayona/project_BACKEND2.git
 - **Marta Gimeno Bayona**
 - [GitHub](https://github.com/MartaGBayona) - [LinkedIn](https://www.linkedin.com/in/martagbayona/)
 
-### Autenticacion:
+## Acknowledgments  :sparkling_heart:
 
-POST /api/auth/register (ok)
-
-POST /api/auth/login (ok)
-
-### Usuarios:
-
-GET /api/users (ok)
-
-GET /api/users/profile (ok)
-
-PUT /api/users/profile (ok)
-
-GET /api/users?email=ejemplo@ejemplo.com
-
-DELETE /api/users/:id
-
-PUT /api/users/:id/role
-
-### Citas:
-
-POST /api/posts (ok)
-
-DELETE /api/posts/:id (ok)
-
-PUT /api/posts/:id (ok)
-
-GET /api/posts/own (ok)
-
-GET /api/posts (ok)
-
-GET /api/posts/:id (ok)
-
-GET /api/users/posts/users-id
-
-### Likes:
-
-PUT /api/posts/like/:id (ok)
-
-\_id: new mongoose.Types.ObjectId("") // es la forma más correcta de generar los id de los usuarios.
+My most sincere thanks to all my colleagues. Especially to Pedro, Marina, and Ana for their invaluable help and support.
