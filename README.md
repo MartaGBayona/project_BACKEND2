@@ -115,6 +115,15 @@ Can update user name.
 
 <image src="./img/PutUserProfile.png" alt="Put User Profile">
 
+-Delete user :
+
+
+`DELETE https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/users/:id`
+
+
+
+<image src="./img/DeleteUser.png" alt="delete user">
+
 
 
 3. Post:
