@@ -151,3 +151,11 @@ export const updateRoleUser = async (req, res) => {
         handleError(res, "Cant update profile", 500)
     }
 }
+
+export const getUserByEmail = async(req, res) => {
+    try {
+        
+    } catch (error) {
+        handleError(res, "Cant get user profile", 500)
+    }
+}
