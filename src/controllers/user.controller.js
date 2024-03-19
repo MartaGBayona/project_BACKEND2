@@ -155,7 +155,7 @@ export const updateRoleUser = async (req, res) => {
 export const getUserByEmail = async (req, res) => {
     try {
 
-        const userEmail = req.query.userEMail
+        const userEmail = req.query.email
         if (!userEmail) {
             return res.status(400).json({
                 success: false,
