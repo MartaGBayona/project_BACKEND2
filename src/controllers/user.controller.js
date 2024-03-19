@@ -122,6 +122,9 @@ export const updateRoleUser = async (req, res) => {
                 {
                     role: role
                 },
+                { 
+                    new: true 
+                }
             )
             .select("-password")
 
