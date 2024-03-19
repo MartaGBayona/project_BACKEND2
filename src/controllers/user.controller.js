@@ -152,33 +152,33 @@ export const updateRoleUser = async (req, res) => {
     }
 }
 
-export const getUserByEmail = async (req, res) => {
-    try {
+// export const getUserByEmail = async (req, res) => {
+//     try {
 
-        const userEmail = req.query.email
+//         const userEmail = req.query.email
 
-        if (!userEmail) {
-            return res.status(400).json({
-                success: false,
-                message: "Missing email"
-            })
-        }
+//         if (!userEmail) {
+//             return res.status(400).json({
+//                 success: false,
+//                 message: "Missing email"
+//             })
+//         }
+//         console.log("Usuario encontrado:", userEmail);
+//         const findUser = await User.findOne(
+//             {
+//                 email: userEmail
+//             },
+//             select("-password")
+//         )
+        
 
-        const findUser = await User.findOne(
-            {
-                email: userEmail
-            },
-            select("-password")
-        )
-        console.log("Usuario encontrado:", findUser);
+//         res.status(200).json({
+//             success: true,
+//             message: "user profile retrieved successfully",
+//             data: findUser
+//         })
 
-        res.status(200).json({
-            success: true,
-            message: "user profile retrieved successfully",
-            data: findUser
-        })
-
-    } catch (error) {
-        handleError(res, "Cant get user profile", 500)
-    }
-}
+//     } catch (error) {
+//         handleError(res, "Cant get user profile", 500)
+//     }
+// }

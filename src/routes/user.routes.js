@@ -13,6 +13,6 @@ router.put('/profile', auth, updateUser)
 router.get('/posts/:id', auth, getAllUsersPosts)
 router.delete('/:id', auth, isSuperAdmin, deleteUser)
 router.put('/role/:id', auth, isSuperAdmin, updateRoleUser)
-router.get('/', auth, isSuperAdmin, getUserByEmail)
+//router.get('/', auth, isSuperAdmin, getUserByEmail)
 
 export default router;
