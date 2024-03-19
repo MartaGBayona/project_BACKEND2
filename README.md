@@ -36,7 +36,6 @@ In this project, we developed the backend of a social network. It allows user re
 - `npm install`.
 - Fill .env with data on .env.sample.
 - `npm run start`.
-- Copy the data from the SQL folder into MySQL and execute the import.
 - Import file Collection_socialMedia.json for Thunder Client.
 
 ### 2 - Info to log
@@ -194,13 +193,13 @@ Can update user name.
 
 - Generate enpoint, filter by email.
 
-- Generate endpoint, role change.
-
 - Generate controller to push or pull followers and followings
 
 - Generate controller to view followers posts.
 
 - Require that users `name` do not contain numbers or special caracters.
+
+- Refactor message error.
 
 - Create a front-end with React for the project.
 

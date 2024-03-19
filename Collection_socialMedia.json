@@ -1,0 +1,336 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Social Media",
+    "dateExported": "2024-03-19T10:45:08.121Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "216bf9d8-f9b9-485a-8285-1896c80e9885",
+            "name": "Auth",
+            "containerId": "",
+            "created": "2024-03-13T15:52:27.534Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "2f407780-6a95-41c1-87c6-186243c54bbb",
+            "name": "User",
+            "containerId": "",
+            "created": "2024-03-13T15:58:04.525Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "e3e6b6b5-7d24-4929-bf33-cd9a5e80a41f",
+            "name": "Post",
+            "containerId": "",
+            "created": "2024-03-13T15:58:29.830Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "8b59ec7b-7465-4dda-81e0-796ca6ec3525",
+            "colId": "4891246a-84a5-4a85-85cc-7df3f2f3a1ee",
+            "containerId": "216bf9d8-f9b9-485a-8285-1896c80e9885",
+            "name": "register",
+            "url": "https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/auth/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-13T15:52:39.812Z",
+            "modified": "2024-03-14T19:49:26.634Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Antonio\",\n  \"email\": \"Antonio@user.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "d15139e5-4f1e-449a-b447-44281c7d9864",
+            "colId": "4891246a-84a5-4a85-85cc-7df3f2f3a1ee",
+            "containerId": "e3e6b6b5-7d24-4929-bf33-cd9a5e80a41f",
+            "name": "new post",
+            "url": "https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/posts",
+            "method": "POST",
+            "sortNum": 15000,
+            "created": "2024-03-13T16:16:00.925Z",
+            "modified": "2024-03-14T14:36:58.102Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"soy un titulo de prueba2\",\n  \"description\": \"soy el post de prueba2\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWViNzQxZDllMmFjNjA3ODM1Mzk3ZDAiLCJyb2xlTmFtZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzEwNDI2NzYwLCJleHAiOjE3MTA0NTU1NjB9.SFcdzjOFlG5Vxwkj4hqmlWzgtYYG1foILdpIoFs13AE"
+            },
+            "tests": []
+        },
+        {
+            "_id": "b6508f28-b26e-42f3-8f98-3b49e3caa772",
+            "colId": "4891246a-84a5-4a85-85cc-7df3f2f3a1ee",
+            "containerId": "216bf9d8-f9b9-485a-8285-1896c80e9885",
+            "name": "login",
+            "url": "https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/auth/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-03-13T15:55:25.438Z",
+            "modified": "2024-03-19T10:08:12.513Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"superAdmin@superAdmin.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "2a448093-fa71-4605-9922-03255fd33ae9",
+            "colId": "4891246a-84a5-4a85-85cc-7df3f2f3a1ee",
+            "containerId": "e3e6b6b5-7d24-4929-bf33-cd9a5e80a41f",
+            "name": "delete post",
+            "url": "https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/posts/65f0670d581b26d7f7fdfaaa",
+            "method": "DELETE",
+            "sortNum": 22500,
+            "created": "2024-03-13T16:18:44.579Z",
+            "modified": "2024-03-14T20:06:04.432Z",
+            "headers": [],
+            "params": [],
+            "reqType": "del",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWViNzQxZDllMmFjNjA3ODM1Mzk3ZDAiLCJyb2xlTmFtZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzEwNDI2NzYwLCJleHAiOjE3MTA0NTU1NjB9.SFcdzjOFlG5Vxwkj4hqmlWzgtYYG1foILdpIoFs13AE"
+            },
+            "tests": []
+        },
+        {
+            "_id": "be7de842-2c2e-4710-9d01-d4c9362a04de",
+            "colId": "4891246a-84a5-4a85-85cc-7df3f2f3a1ee",
+            "containerId": "2f407780-6a95-41c1-87c6-186243c54bbb",
+            "name": "get users",
+            "url": "https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/users",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-03-13T16:08:15.325Z",
+            "modified": "2024-03-14T19:52:59.151Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWViNzQxZDllMmFjNjA3ODM1Mzk3ZDAiLCJyb2xlTmFtZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzEwNDMzMTY3LCJleHAiOjE3MTA0NjE5Njd9.jRovGt2m11gpiCfAY6Cc-WS6rk58vzdDyDyp12uzCWI"
+            },
+            "tests": []
+        },
+        {
+            "_id": "d9ead300-855a-4920-bd3f-303a729ecb38",
+            "colId": "4891246a-84a5-4a85-85cc-7df3f2f3a1ee",
+            "containerId": "2f407780-6a95-41c1-87c6-186243c54bbb",
+            "name": "get users profile",
+            "url": "https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/users/profile",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-03-13T16:10:14.705Z",
+            "modified": "2024-03-14T14:34:12.155Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWViNzQxZDllMmFjNjA3ODM1Mzk3ZDAiLCJyb2xlTmFtZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzEwNDI2NzYwLCJleHAiOjE3MTA0NTU1NjB9.SFcdzjOFlG5Vxwkj4hqmlWzgtYYG1foILdpIoFs13AE"
+            },
+            "tests": []
+        },
+        {
+            "_id": "6e2b1750-04c7-46ca-9886-c41ef12c24bc",
+            "colId": "4891246a-84a5-4a85-85cc-7df3f2f3a1ee",
+            "containerId": "2f407780-6a95-41c1-87c6-186243c54bbb",
+            "name": "put users profile",
+            "url": "https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/users/profile",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2024-03-13T16:11:12.227Z",
+            "modified": "2024-03-14T14:34:58.163Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"nuevo nombre del super admin\"\n}",
+                "form": []
+            },
+            "reqType": "put",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWViNzQxZDllMmFjNjA3ODM1Mzk3ZDAiLCJyb2xlTmFtZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzEwNDI2NzYwLCJleHAiOjE3MTA0NTU1NjB9.SFcdzjOFlG5Vxwkj4hqmlWzgtYYG1foILdpIoFs13AE"
+            },
+            "tests": []
+        },
+        {
+            "_id": "a8e8f399-7c37-4554-8bd7-a923b1dfd56b",
+            "colId": "4891246a-84a5-4a85-85cc-7df3f2f3a1ee",
+            "containerId": "e3e6b6b5-7d24-4929-bf33-cd9a5e80a41f",
+            "name": "put post",
+            "url": "https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/posts/65f30b8a61bfc5bd4e65db4b",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2024-03-13T16:24:55.156Z",
+            "modified": "2024-03-14T14:40:33.574Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"MIAUUUUU\",\n  \"description\": \"MIAUUUU\"\n}",
+                "form": []
+            },
+            "reqType": "put",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWViNzQxZDllMmFjNjA3ODM1Mzk3ZDAiLCJyb2xlTmFtZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzEwNDI2NzYwLCJleHAiOjE3MTA0NTU1NjB9.SFcdzjOFlG5Vxwkj4hqmlWzgtYYG1foILdpIoFs13AE"
+            },
+            "tests": []
+        },
+        {
+            "_id": "3ae0a258-265e-45b0-93a3-71dc89e868cc",
+            "colId": "4891246a-84a5-4a85-85cc-7df3f2f3a1ee",
+            "containerId": "e3e6b6b5-7d24-4929-bf33-cd9a5e80a41f",
+            "name": "get own posts",
+            "url": "https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/posts/own",
+            "method": "GET",
+            "sortNum": 65000,
+            "created": "2024-03-13T16:36:33.059Z",
+            "modified": "2024-03-14T14:41:08.143Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWViNzQxZDllMmFjNjA3ODM1Mzk3ZDAiLCJyb2xlTmFtZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzEwNDI2NzYwLCJleHAiOjE3MTA0NTU1NjB9.SFcdzjOFlG5Vxwkj4hqmlWzgtYYG1foILdpIoFs13AE"
+            },
+            "tests": []
+        },
+        {
+            "_id": "e0547868-cac7-4f34-a102-93e43c936a14",
+            "colId": "4891246a-84a5-4a85-85cc-7df3f2f3a1ee",
+            "containerId": "e3e6b6b5-7d24-4929-bf33-cd9a5e80a41f",
+            "name": "get posts",
+            "url": "https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/posts",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2024-03-13T16:43:57.848Z",
+            "modified": "2024-03-14T14:42:27.236Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWViNzQxZDllMmFjNjA3ODM1Mzk3ZDAiLCJyb2xlTmFtZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzEwNDI2NzYwLCJleHAiOjE3MTA0NTU1NjB9.SFcdzjOFlG5Vxwkj4hqmlWzgtYYG1foILdpIoFs13AE"
+            },
+            "tests": []
+        },
+        {
+            "_id": "cedaa74a-07d6-477c-9353-8c1fbd43e19d",
+            "colId": "4891246a-84a5-4a85-85cc-7df3f2f3a1ee",
+            "containerId": "e3e6b6b5-7d24-4929-bf33-cd9a5e80a41f",
+            "name": "get post id",
+            "url": "https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/posts/65f30b8a61bfc5bd4e65db4b",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2024-03-13T16:46:05.380Z",
+            "modified": "2024-03-14T14:43:21.912Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWViNzQxZDllMmFjNjA3ODM1Mzk3ZDAiLCJyb2xlTmFtZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzEwNDI2NzYwLCJleHAiOjE3MTA0NTU1NjB9.SFcdzjOFlG5Vxwkj4hqmlWzgtYYG1foILdpIoFs13AE"
+            },
+            "tests": []
+        },
+        {
+            "_id": "e9b9fdd8-2694-4f91-a7e2-342593564bf5",
+            "colId": "4891246a-84a5-4a85-85cc-7df3f2f3a1ee",
+            "containerId": "e3e6b6b5-7d24-4929-bf33-cd9a5e80a41f",
+            "name": "get user posts",
+            "url": "https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/users/posts/65eb741d9e2ac607835397d0",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2024-03-13T16:49:42.435Z",
+            "modified": "2024-03-14T14:44:12.709Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWViNzQxZDllMmFjNjA3ODM1Mzk3ZDAiLCJyb2xlTmFtZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzEwNDI2NzYwLCJleHAiOjE3MTA0NTU1NjB9.SFcdzjOFlG5Vxwkj4hqmlWzgtYYG1foILdpIoFs13AE"
+            },
+            "tests": []
+        },
+        {
+            "_id": "d31f09a1-851b-4a69-a0d9-06def2a2d2bf",
+            "colId": "4891246a-84a5-4a85-85cc-7df3f2f3a1ee",
+            "containerId": "e3e6b6b5-7d24-4929-bf33-cd9a5e80a41f",
+            "name": "like",
+            "url": "https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/posts/like/65f1ef968533ba5b3a42c7da",
+            "method": "PUT",
+            "sortNum": 140000,
+            "created": "2024-03-13T16:01:51.768Z",
+            "modified": "2024-03-14T16:19:42.566Z",
+            "headers": [],
+            "params": [],
+            "reqType": "put",
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWViNzQxZDllMmFjNjA3ODM1Mzk3ZDAiLCJyb2xlTmFtZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzEwNDMzMTY3LCJleHAiOjE3MTA0NjE5Njd9.jRovGt2m11gpiCfAY6Cc-WS6rk58vzdDyDyp12uzCWI"
+            },
+            "tests": []
+        },
+        {
+            "_id": "77686bfd-6cc2-484c-a93a-4708c5236644",
+            "colId": "4891246a-84a5-4a85-85cc-7df3f2f3a1ee",
+            "containerId": "2f407780-6a95-41c1-87c6-186243c54bbb",
+            "name": "delete user",
+            "url": "https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/users/65f35b467d1ea5563f8bb8ed",
+            "method": "DELETE",
+            "sortNum": 150000,
+            "created": "2024-03-14T21:01:13.866Z",
+            "modified": "2024-03-14T21:26:09.709Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWViNzQxZDllMmFjNjA3ODM1Mzk3ZDAiLCJyb2xlTmFtZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzEwNDUxNTMxLCJleHAiOjE3MTA0ODAzMzF9.KoFc_it171L1SkCHv6_RAK7CTpB_d4i1DZF_hUoMS0Q"
+            },
+            "tests": []
+        },
+        {
+            "_id": "36dbee64-fa4f-40be-aedc-55d62be5b086",
+            "colId": "4891246a-84a5-4a85-85cc-7df3f2f3a1ee",
+            "containerId": "2f407780-6a95-41c1-87c6-186243c54bbb",
+            "name": "update role user",
+            "url": "https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/users/role/65eb742b9e2ac607835397d6",
+            "method": "PUT",
+            "sortNum": 160000,
+            "created": "2024-03-19T09:09:36.628Z",
+            "modified": "2024-03-19T10:40:53.742Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"role\": \"user\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWViNzQxZDllMmFjNjA3ODM1Mzk3ZDAiLCJyb2xlTmFtZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzEwODQyODkyLCJleHAiOjE3MTA4NzE2OTJ9.aEGz7lBp5LqrHn8KFgfwuhSKXwOgUgLacpnBhtZFcxA"
+            },
+            "tests": []
+        }
+    ]
+}
