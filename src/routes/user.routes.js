@@ -12,6 +12,6 @@ router.get('/profile', auth, getUserProfile)
 router.put('/profile', auth, updateUser)
 router.get('/posts/:id', auth, getAllUsersPosts)
 router.delete('/:id', auth, isSuperAdmin, deleteUser)
-router.put('/{id}/role', auth, isSuperAdmin, updateRoleUser)
+router.put('/role/:id', auth, isSuperAdmin, updateRoleUser)
 
 export default router;

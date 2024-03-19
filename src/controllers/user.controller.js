@@ -56,6 +56,9 @@ export const updateUser = async (req, res) => {
                 {
                     name: name
                 },
+                { 
+                    new: true 
+                }
             )
             .select("-password")
 
