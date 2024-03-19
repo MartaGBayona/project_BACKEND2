@@ -124,6 +124,15 @@ Can update user name.
 
 <image src="./img/DeleteUser.png" alt="delete user">
 
+-Update role user :
+
+
+`PUT https://socialmedia-dev-xtcq.2.ie-1.fl0.io/api/users/role/:id`
+
+
+
+<image src="./img/UpdateRoleUser.png" alt="update role user">
+
 
 
 3. Post:
