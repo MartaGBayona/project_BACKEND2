@@ -115,7 +115,16 @@ export const deleteUser = async (req, res) => {
 export const updateRoleUser = async (req, res) => {
     try {
         const userId = req.params.id
-        const role = req.body.role
+        const newRole = req.body.role
+
+        const user = await User.findById(userId);
+
+        if(user.role === newRole) {
+            return res.status(400).json({
+                success: false,
+                message: "the user already has this role"
+            })
+        }
 
         const modifiedUser = await User
             .findOneAndUpdate(
@@ -123,7 +132,7 @@ export const updateRoleUser = async (req, res) => {
                     _id: userId
                 },
                 {
-                    role: role
+                    role: newRole
                 },
                 { 
                     new: true 
