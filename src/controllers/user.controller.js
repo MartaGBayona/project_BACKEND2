@@ -111,7 +111,7 @@ export const deleteUser = async (req, res) => {
 
 export const updateRoleUser = async (req, res) => {
     try {
-        const userId = req.params.userId
+        const userId = req.params.id
         const role = req.body.role
 
         const modifiedUser = await User
