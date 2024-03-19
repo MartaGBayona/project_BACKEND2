@@ -108,3 +108,31 @@ export const deleteUser = async (req, res) => {
         handleError(res, "Cant delete user", 500)
     }
 }
+
+export const updateRoleUser = async (req, res) => {
+    try {
+        const userId = req.params.userId
+        const role = req.body.role
+
+        const modifiedUser = await User
+            .findOneAndUpdate(
+                {
+                    _id: userId
+                },
+                {
+                    role: role
+                },
+            )
+            .select("-password")
+
+        res.status(201).json(
+            {
+                success: true,
+                message: "Profile update successfully",
+                data: modifiedUser
+            }
+        );
+    } catch (error) {
+        handleError(res, "Cant update profile", 500)
+    }
+}

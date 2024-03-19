@@ -189,9 +189,11 @@ Can update user name.
 
 - Generate controller to push or pull followers and followings
 
-- - Generate controller to view followers posts.
+- Generate controller to view followers posts.
 
 - Require that users `name` do not contain numbers or special caracters.
+
+- Create a front-end with React for the project.
 
 
 ---
