@@ -56,8 +56,8 @@ export const updateUser = async (req, res) => {
                 {
                     name: name
                 },
-                { 
-                    new: true 
+                {
+                    new: true
                 }
             )
             .select("-password")
@@ -83,7 +83,7 @@ export const deleteUser = async (req, res) => {
                 _id: userId,
             }
         )
-            
+
         if (!findUser) {
             res.status(400).json(
                 {
@@ -119,7 +119,7 @@ export const updateRoleUser = async (req, res) => {
 
         const user = await User.findById(userId);
 
-        if(user.role === newRole) {
+        if (user.role === newRole) {
             return res.status(400).json({
                 success: false,
                 message: "the user already has this role"
@@ -134,8 +134,8 @@ export const updateRoleUser = async (req, res) => {
                 {
                     role: newRole
                 },
-                { 
-                    new: true 
+                {
+                    new: true
                 }
             )
             .select("-password")
@@ -152,9 +152,30 @@ export const updateRoleUser = async (req, res) => {
     }
 }
 
-export const getUserByEmail = async(req, res) => {
+export const getUserByEmail = async (req, res) => {
     try {
-        
+
+        const userEmail = req.query.userEMail
+        if (!userEmail) {
+            return res.status(400).json({
+                success: false,
+                message: "Missing email"
+            })
+        }
+
+        const findUser = await User.findOne(
+            {
+                email: userEmail
+            },
+            select("-password")
+        )
+
+        res.status(200).json({
+            success: true,
+            message: "user profile retrieved successfully",
+            data: findUser
+        })
+
     } catch (error) {
         handleError(res, "Cant get user profile", 500)
     }
