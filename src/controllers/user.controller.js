@@ -156,6 +156,7 @@ export const getUserByEmail = async (req, res) => {
     try {
 
         const userEmail = req.query.email
+
         if (!userEmail) {
             return res.status(400).json({
                 success: false,
@@ -169,6 +170,7 @@ export const getUserByEmail = async (req, res) => {
             },
             select("-password")
         )
+        console.log("Usuario encontrado:", findUser);
 
         res.status(200).json({
             success: true,
