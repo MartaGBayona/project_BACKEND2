@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { deleteUser, getUserByEmail, getUserProfile, getUsers, updateRoleUser, updateUser } from "../controllers/user.controller.js";
+import { deleteUser, getUserProfile, getUsers, updateRoleUser, updateUser } from "../controllers/user.controller.js";
 import { auth } from "../middlewares/auth.js";
 import { isSuperAdmin } from "../middlewares/isSuperAdmin.js";
 import { getAllUsersPosts } from "../controllers/post.controller.js";
